@@ -1,0 +1,13 @@
+/* Stiluri pentru toate tagurile <th> din tabel */
+table th {
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Stiluri pentru toate tagurile <td> din tabel */
+table td {
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+}

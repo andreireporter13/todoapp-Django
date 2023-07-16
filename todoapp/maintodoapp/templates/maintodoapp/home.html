@@ -1,5 +1,24 @@
 {% extends 'maintodoapp/base.html' %}
 
+
 {% block content %}
-	<h2>Home</h2>
+  <h2> Task-uri batute in cuie! </h2>
+      <table style="width:100%">
+	<thead>
+        <tr>
+          <th>Nr. task</th>
+          <th>Task</th>
+          <th>Stare</th>
+        </tr>
+      </thead>
+      <tbody>
+	{% if tasks %}
+		{% for task in tasks %}
+		<tr>
+		  <td>{{ task.id }}</td>
+		  <td>{{ task.task }}</td>
+		  <td>{{ task.status_task }}</td>
+		</tr>
+		{% endfor %}
+	{% endif %}
 {% endblock %}
