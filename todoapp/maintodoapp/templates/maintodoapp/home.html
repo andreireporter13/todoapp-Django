@@ -3,6 +3,8 @@
 
 {% block content %}
   <h2> Task-uri batute in cuie! </h2>
+
+      <!-- Table data -->
       <table style="width:100%">
 	<thead>
         <tr>
@@ -17,8 +19,25 @@
 		<tr>
 		  <td>{{ task.id }}</td>
 		  <td>{{ task.task }}</td>
-		  <td>{{ task.status_task }}</td>
+		  <td>{{ task.done_task }}</td>
 		</tr>
 		{% endfor %}
 	{% endif %}
+      </tbody>
+      </table>
+      <!-- END TABLE -->
+
+      <br>
+      <br>
+
+<!-- FORM TO SEND DATA TO DB -->
+<form>
+  <h4>Adauga un task nou!</h4>
+  <div class="mb-3">
+  <input type="text" class="form-control" placeholder="Ce task pui in agenda?">
+  </div>
+  <button type="submit" class="btn btn-primary">Adauga in tabel</button>
+</form>
+<!-- END FORM -->
+
 {% endblock %}

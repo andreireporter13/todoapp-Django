@@ -11,3 +11,13 @@ table td {
   padding: 8px;
   text-align: left;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
