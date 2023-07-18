@@ -31,11 +31,9 @@
       <br>
 
 <!-- FORM TO SEND DATA TO DB -->
-<form>
-  <h4>Adauga un task nou!</h4>
-  <div class="mb-3">
-  <input type="text" class="form-control" placeholder="Ce task pui in agenda?">
-  </div>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
   <button type="submit" class="btn btn-primary">Adauga in tabel</button>
 </form>
 <!-- END FORM -->
