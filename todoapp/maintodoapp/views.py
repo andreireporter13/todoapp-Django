@@ -1,7 +1,7 @@
 #
 #
 #
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Tasks
 from .forms import TasksForm
 
@@ -20,6 +20,24 @@ def home(request):
         tasks = Tasks.objects.all()
         context = {'form': form, 'tasks': tasks}
         return render(request, 'maintodoapp/home.html', context)
+
+
+def delete(reguest, id):
+    task = Tasks.objects.get(pk=id)
+    task.delete()
+    return redirect('home')
+
+
+def change_status(request, id):
+    task = Tasks.objects.get(pk=id)
+    if task.done_task:
+        task.done_task = False
+        task.save()
+    else:
+        task.done_task = True
+        task.save()
+
+    return redirect('home')
 
 
 def about(request):
