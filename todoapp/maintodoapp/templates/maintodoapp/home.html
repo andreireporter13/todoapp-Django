@@ -19,13 +19,13 @@
                     {% if task.done_task %}
                         <tr class="table-warning">
                             <td class="linethrough">{{ task.task }}</td>
-                            <td><a href="{% url 'change_status' task.id %}">Not Done</a></td>
+                            <td><a href="{% url 'change_status' task.id %}">Done</a></td>
                             <td><a href="{% url 'delete' task.id %}">Delete</a></td>
                         </tr>
                     {% else %}
                         <tr class="table-success">
                             <td>{{ task.task }}</td>
-                            <td><a href="{% url 'change_status' task.id %}">Done</a></td>
+                            <td><a href="{% url 'change_status' task.id %}">Not Done</a></td>
                             <td><a href="{% url 'delete' task.id %}">Delete</a></td>
                         </tr>
                     {% endif %}
